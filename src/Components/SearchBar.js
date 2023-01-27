@@ -22,10 +22,11 @@ function SearchBar({placeholder}) {
   return (
     <div className='search'>
       <div className='searchInputs'>
-        <input type="text" placeholder={placeholder} onChange={handleFilter} onSubmit={handleSubmit} />
-        <div className='searchIcon'>
-          <SearchIcon />
+      <div className='searchIcon'>
+          <SearchIcon/>
         </div>
+        <input type="text" placeholder={placeholder} onChange={handleFilter} onSubmit={handleSubmit} />
+
       </div>
       {
         filteredData.length !== 0 && (
