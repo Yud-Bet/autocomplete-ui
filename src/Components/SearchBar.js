@@ -3,6 +3,8 @@ import './SearchBar.css';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
 
+axios.defaults.baseURL = process.env.REACT_APP_API_ENDPOINT
+
 function SearchBar({placeholder}) {
   const [filteredData, setFilteredData] = useState([]);
 
