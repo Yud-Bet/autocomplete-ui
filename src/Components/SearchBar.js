@@ -11,7 +11,6 @@ function SearchBar({ placeholder }) {
 
   const debounceSuggestion = useCallback(
     debounce(async (query) => {
-      console.log("Helllo", query);
       const response = await axios.get(`/search?q=${query}`);
       setFilteredData(response.data);
     }, 50),
@@ -20,9 +19,7 @@ function SearchBar({ placeholder }) {
 
   const handleFilter = async (event) => {
     const query = event.target.value;
-    if (query) {
-      await debounceSuggestion(query);
-    } else setFilteredData([]);
+    await debounceSuggestion(query);
   };
 
   const handleSubmit = async (event) => {
